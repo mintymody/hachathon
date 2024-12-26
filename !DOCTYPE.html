@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Mindset for Students</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+      
+/* General Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #3d2748; /* Updated Navbar Color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+/* Navbar hover effect */
+.navbar:hover {
+    background-color: #3d2748; /* Darker shade of the new color on hover */
+}
+
+/* Navbar Brand */
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Navbar toggler button */
+.navbar-toggler {
+    border-color: #fff;
+}
+
+/* Navbar link container */
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+}
+
+/* Dropdown link styling */
+.nav-item.dropdown {
+    width: 100%;
+}
+
+.nav-link.dropdown-toggle {
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    background-color: #3d2748; /* Updated color */
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dropdown link hover effect */
+.nav-link.dropdown-toggle:hover {
+    color: #ffeb3b; /* Yellow color on hover */
+    background-color: ##3d2748; /* Darker shade on hover */
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    width: 100%;
+    background-color: #3d2748;
+    border-radius: 0;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover effect to show dropdown */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Dropdown item styling */
+.dropdown-item {
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    background-color: #3d2748;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for dropdown items */
+.dropdown-item:hover {
+    background-color: #3d2748; /* Darker color for items on hover */
+    color: #ffeb3b; /* Yellow color for text on hover */
+}
+
+/* Active state for dropdown items */
+.dropdown-item.active {
+    background-color: #3d2748;
+    color: #ffeb3b;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .navbar-nav {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-toggler {
+        margin-left: auto;
+    }
+
+    .dropdown-menu {
+        position: relative;
+    }
+
+    .dropdown-item {
+        padding: 10px 20px;
+    }
+}
+
+
+        .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #4e54c8, #8f94fb);
+    color: white;
+    text-align: center;
+    position: relative;
+    padding: 0 20px;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero-image {
+    width: 200px;  /* Increased size */
+    height: 200px; /* Increased size */
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 5px solid #ffdf00;
+    transition: transform 0.3s;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+}
+
+.hero-image:hover {
+    transform: scale(1.1);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;  /* Positioned below the text box */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.scroll-indicator:hover {
+    transform: scale(1.2);
+    background-color: #ffdf00;
+    color: #4e54c8;
+    box-shadow: 0 0 20px rgba(255, 223, 0, 0.7);
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;  /* Positioned below the text box */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.scroll-indicator:hover {
+    transform: scale(1.2);
+    background-color: #c41f93;
+    color: #4e54c8;
+    box-shadow: 0 0 20px rgba(255, 223, 0, 0.7);
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;  /* Positioned below the text box */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+.btn {
+    background-color: #72c41f; /* Bright Yellow */
+    color: #000000; /* Dark Blue */
+    border: none;
+}
+
+.btn:hover {
+    background-color: #007bff; /* Dark Blue */
+    color: #c41f93; /* Bright Yellow */
+    transition: background 0.3s, color 0.3s;
+}
+
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: white;
+    animation: bounce 1.5s infinite;
+    cursor: pointer;
+}
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        .section {
+            padding: 80px 20px;
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s, transform 0.6s;
+            margin-top: 70px; /* Added top margin to create more space between sections */
+        }
+
+        .section:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .section h2 {
+            color: #007bff;
+            padding-bottom: 15px;
+        }
+
+        /* Updated Growth Tips Section */
+        .growth-tips ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px; /* Adjusted gap between list items */
+            justify-content: center;
+        }
+
+        .growth-tips ul li {
+            background: #c41f93;
+            color: white;
+            padding: 30px 40px;
+            border-radius: 5px;
+            flex: 1 1 30%;
+            text-align: center;
+            transition: background 0.3s, transform 0.3s;
+            margin: 20px 0; /* Adjusted margin for space between options */
+        }
+
+        .growth-tips ul li:hover {
+            background: #007bff;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        html {
+            scroll-padding-top: 70px;
+        }
+
+        #challenge {
+            background: #ffffff;
+            padding: 50px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 70px; /* Increased space between sections */
+        }
+
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .card-header {
+            background-color: #28a745;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: 15px;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .card-body {
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .input-answer {
+            height: 50px;
+            font-size: 1.5rem;
+        }
+
+        .badge-success {
+            background-color: #28a745;
+            color: white;
+            margin: 5px;
+            border-radius: 30px;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        #badges-section {
+            background: #ffffff;
+            padding: 50px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 70px; /* Increased space between sections */
+        }
+
+        #badges-section h2 {
+            text-align: center;
+        }
+
+        .congratulations {
+            display: none;
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #28a745;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            animation: scaleUp 2s ease-out;
+        }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+       
+        /* Progress Bar */
+        .progress {
+            height: 20px;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            background-color: #28a745;
+            color: white;
+            width: 0%;
+            text-align: center;
+            transition: width 0.5s;
+        }
+
+        @media (max-width: 768px) {
+            .growth-tips ul li {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-lg" style="background-color: #3d2748;">
+        <div class="container">
+            <a class="navbar-brand" href="#">Growth Mindset</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDropdownMenu" aria-controls="navbarDropdownMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarDropdownMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown w-100">
+                        <a class="nav-link dropdown-toggle w-100 text-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Menu
+                        </a>
+                        <ul class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#about">About</a></li>
+                            <li><a class="dropdown-item" href="#tips">Growth Tips</a></li>
+                            <li><a class="dropdown-item" href="#AI in mindset">AI in Mindset</a></li> <!-- Added new section link -->
+                            <li><a class="dropdown-item" href="#challenge">Challenge</a></li>
+                            <li><a class="dropdown-item" href="#badges">Badges</a></li>
+                            <li><a class="dropdown-item" href="#chatbot">AI Chatbot</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+ <!-- Updated Hero Section with New Background Image -->
+<section id="hero" class="hero" style="background-image: url('download2.png'); background-size: cover; background-position: center;">
+    <div class="container text-center text-white hero-text">
+        <img src="download.png" alt="Growth Mindset Image" class="hero-image">
+        <h1 class="hero-title">Unlock Your Potential</h1>
+        <p class="hero-subtitle">Embrace challenges, learn from mistakes, and grow beyond boundaries.</p>
+    </div>
+    <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">
+        &#8595; Explore More
+    </div>
+</section>
+
+
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>What is meant by Growth Mindset?</h2>
+            <p>A growth mindset means believing you can get better by practicing and learning.
+                A fixed mindset means believing you can't change how good you are.
+                In short, a growth mindset helps you keep improving.
+                </p>
+    </section>
+
+    <!-- Growth Tips Section -->
+    <section id="tips" class="section growth-tips">
+        <div class="container">
+            <h2>How can you grow your mindset?</h2>
+            <ul>
+                <li>Learn from mistakes</li>
+                <li>Surround yourself with growth-minded people</li>
+                <li>Set goals and be patient</li>
+                <li>Be confident and never lose hope</li>
+                <li>Focus on effort, not just results</li>
+            </ul>
+        </div>
+    </section>
+
+        <!-- How AI helps with mindset Growth Section -->
+        <section id="AI in mindset" class="section">
+            <div class="container">
+                <h2>How can AI help students grow their mindset?</h2>
+                <ul>
+                    <p>AI can help students grow by offering personalized lessons and feedback. It gives challenges that match each student's level and encourages improvement. AI uses fun rewards like badges to show that effort is important, not just the result. It tracks progress and helps students see how much they’ve learned, pushing them to keep going. AI also helps with tough subjects and reminds students that mistakes are part of learning. It encourages goal-setting, time management, and positive thinking. Overall, AI helps students believe they can always improve and succeed.
+                    </p>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Empty Section to be Filled -->
+<section id="growth-mindset-info" class="section" style="padding: 40px;">
+    <div class="container">
+        <h2>How can you grow your mindset?</h2>
+        <ul>
+            <li><strong>Embrace Challenges</strong>: Seek opportunities that push you beyond your comfort zone.</li>
+            <li><strong>View Effort as Mastery</strong>: Focus on effort, not just talent, for growth.</li>
+            <li><strong>Learn from Criticism</strong>: Use feedback to improve, not take it personally.</li>
+            <li><strong>Replace Negative Self-Talk</strong>: Change "I can't" to "I can improve with practice."</li>
+            <li><strong>Focus on Progress</strong>: Celebrate small wins rather than aiming for perfection.</li>
+            <li><strong>Cultivate Resilience</strong>: See setbacks as learning opportunities and bounce back.</li>
+            <li><strong>Set Incremental Goals</strong>: Break larger goals into smaller, manageable steps.</li>
+            <li><strong>Surround Yourself with Growth-Minded People</strong>: Engage with those who inspire and support your growth.</li>
+            <li><strong>Practice Self-Reflection</strong>: Regularly assess your progress and lessons learned.</li>
+            <li><strong>Stay Curious and Open-Minded</strong>: Continuously explore new ideas, skills, and knowledge.</li>
+        </ul>
+    </div>
+</section>
+
+
+    <!-- Challenge Section -->
+<section id="challenge" class="section">
+    <div class="container">
+        <div class="card">
+            <div class="card-header">Today's Challenge</div>
+            <div class="card-body">
+                <p id="challenge-question">What is 50 + 90?</p>
+                <input type="text" id="user-answer" class="form-control input-answer" placeholder="Your Answer">
+                <button id="submit-answer-btn" class="btn btn-success mt-3">Submit Answer</button>
+                <p id="answer-feedback" class="mt-3"></p>
+                <div class="progress">
+                    <div id="progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Badges Section -->
+    <section id="badges" class="section" id="badges-section">
+        <div class="container">
+            <h2>Badges Earned</h2>
+            <div id="badges-list"></div>
+        </div>
+        <div class="congratulations" id="congratulations-message">Congratulations! You earned a new badge!</div>
+    </section>
+     <!-- AI Chatbot Section -->
+     <section id="chatbot" class="section">
+        <div class="container">
+            <h2>AI Chatbot</h2>
+            <p>Our AI-powered chatbot is here to help you with any questions you have about growth mindset, tips, challenges, and much more. Simply interact with it to get personalized advice and assistance!</p>
+            <script>
+                window.PICKAXE=window.PICKAXE||{pickaxes:[],style:"kHsjoCQGgI0GWASmgIdIA2CHA0wGQyCwBQBUiEBzQQC+EgGQwgMA3gLICDMAoAnQgvFSCsUIPQYgIHqAEw4NXUgIz6DFQ4OkwghP2AGnoMFJgKAFA8gEA4QAI9gVPBABGqBU3gAgATMBRDoCliQACAgUzHAtwqBG+UCHLIAgbwMUCgAXVA5O6Aw4MAKt4HaiwCpogEAFAAAaBog0CvQ4BLBQKIhAYEBGToBQ6ICj0YCrqoBlQoACQ4CEoACggEPPgAAHgKRPgBHxgJIhgHKAgBLCgOACgJMGgJNAgNPTgHTWgGPUgEMBgPWjgBY1gKaggLb2gEIzgJeXgIGAgMRTgMM3gLJzgKeygNF4gBN2gKJZgJdqgBmUgBUFgBgagBpigCe2gPrxgDc4gBvUgIgEgNmkgMRAgMFAgLc0gCAMgAhOgEvEgCQFgMACgIAWgA8ugL4vgPgYgI5HgALAgAo8gLRMgIFSgEHCgAAZQAKUoBAMkAgAGASLpABgFAChALomgADKQABUYAvQEAAA+ARBnAJG8gGF0QCQooBEYUAJROAYixABG4gGPnwAjkIBPJsAYAOANvHAIoCgBmTwBKICpAIJzgEcjQBFOXRAPJ5gAAIQCWGoAGIEAiBiAaYnAMVogCTFwB2b4BsgkAwJSAT6nALyigHTUwChMoBExcABYSAbPRAKZLgBcUQAyooAmg0AADCAOhBABkhAFHAH6+gFV0wCwZYBBW8ACYKAEhdAP34gGD1wAaRIB/JsA3BSAWXbAHELgF7xQBIZYAoDEAN5GADEzAAAxgAA4QCBEIA6y0AczmAPUpACq5gBctwA4GIAE2UADzSAPBLAE2egAy9wApv4AtJMAIL2AHDZADNZgByKwCEZIBwbEARIGAVerAJIqgE92wDEkIADwsAgkCAdIRADwOgHhcQB0YYANxcAoX+APIjAHYygEwBQDrNYBAQsAW86ABUFAABqgFTWQDDSIBB+0ARz+AT3PACVXgHNEwC3kIAWCkAABVAGe4wA/VMAGIfACHzQBfFEAUwRACN5QA1TEAZMZAAuTQAjN0AAAigA"},window.PICKAXE.pickaxes.push({id:"Study_HelperAI_3PPA0",type:"popup"});const{id:_fid}=window.PICKAXE.pickaxes[0];fetch(`https://embed.pickaxeproject.com/axe/api/script/${_fid}`).then((e=>e.json())).then((({v:e})=>{const t=`https://cdn.jsdelivr.net/gh/pickaxeproject/cdn@${e}/dist`;if(!document.querySelector(`script[src="${t}/bundle.js"]`)){const e=document.createElement("script");e.src=t+"/bundle.js",e.defer=!0,document.head.appendChild(e)}}));
+            </script>
+            <div id="pickaxe-popup-Study_HelperAI_3PPA0"></div>
+        </div>
+    </section>
+    
+    
+
+    <script>
+        let progress = 0;
+        const progressBar = document.getElementById('progress-bar');
+        const submitAnswerBtn = document.getElementById('submit-answer-btn');
+        const userAnswer = document.getElementById('user-answer');
+        const answerFeedback = document.getElementById('answer-feedback');
+        const badgesList = document.getElementById('badges-list');
+        const congratulationsMessage = document.getElementById('congratulations-message');
+
+        const questions = [
+            { question: "What is 50 + 90?", answer: "140" },
+            { question: "What is 10 - 20?", answer: "-10" },
+            { question: "What is 2 * 6?", answer: "12" },
+            { question: "What is 70 - 9?", answer: "61" },
+            { question: "What is 40 + 5?", answer: "45" },
+            { question: "What is 5 * 7?", answer: "35" },
+        ];
+
+        let currentQuestion = 0;
+
+        function updateProgress() {
+            progressBar.style.width = progress + '%';
+            progressBar.textContent = progress + '%';
+            progressBar.setAttribute('aria-valuenow', progress);
+
+            if (progress === 100) {
+                awardBadge("Mastery Achieved!");
+            }
+        }
+
+        function awardBadge(badgeName) {
+            const badge = document.createElement('span');
+            badge.className = 'badge badge-success';
+            badge.textContent = badgeName;
+            badgesList.appendChild(badge);
+
+            // Show congratulations message
+            congratulationsMessage.style.display = "block";
+            setTimeout(() => {
+                congratulationsMessage.style.display = "none";
+            }, 4000);
+        }
+
+        function loadCurrentQuestion() {
+            const challengeQuestion = document.getElementById('challenge-question');
+            challengeQuestion.textContent = questions[currentQuestion].question;
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+            } else {
+                currentQuestion = 0;
+            }
+            loadCurrentQuestion();
+        }
+
+        submitAnswerBtn.addEventListener('click', () => {
+            const answer = userAnswer.value.trim();
+            if (answer === questions[currentQuestion].answer) {
+                progress += 16.67;
+                if (progress > 100) progress = 100;
+                updateProgress();
+                answerFeedback.textContent = "Correct! Well done!";
+                answerFeedback.style.color = "green";
+                nextQuestion();
+            } else {
+                answerFeedback.textContent = "Oops! Try again!";
+                answerFeedback.style.color = "red";
+            }
+            userAnswer.value = '';
+        });
+
+        loadCurrentQuestion();
+    </script>
+</body>
+</html>	
